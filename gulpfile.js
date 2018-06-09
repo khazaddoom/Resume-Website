@@ -15,7 +15,7 @@ gulp.task('move-js', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('launch-server', ['compile-sass', function() {
+gulp.task('launch-server', ['compile-sass'], function() {
 
     browserSync.init({
         server: './src'
@@ -25,6 +25,6 @@ gulp.task('launch-server', ['compile-sass', function() {
 
     gulp.watch('src/*.html').on('change', browserSync.reload);
 
-}]);
+});
 
 gulp.task('default', ['move-js', 'launch-server'])
